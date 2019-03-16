@@ -54,13 +54,17 @@ contract UniversityProxy {
     }
 
     function addStudentToCourse(uint _universityID, uint _courseID, uint _studentID) public returns (bool) {
-        require(universities[_universityID].id == _universityID && universities[_universityID].courses[_courseID].id == _courseID && universities[_universityID].courses[_courseID].students[_studentID] != _studentID && universities[_universityID].courses[_courseID].capacity > niversities[_universityID].courses[_courseID].students.length);
+        require(universities[_universityID].id == _universityID);
+        require(universities[_universityID].courses[_courseID].id == _courseID);
+        require(universities[_universityID].courses[_courseID].students[_studentID] != _studentID);
+        require(universities[_universityID].courses[_courseID].capacity > niversities[_universityID].courses[_courseID].students.length);
         universities[_universityID].courses[_courseID].students.push(_studentID);
         return true;
     }
 
     function markCourseEnd(uint _universityID, uint _courseID) public returns (bool){
-        require(universities[_universityID].id == _universityID && universities[_universityID].courses[_courseID].id == _courseID);
+        require(universities[_universityID].id == _universityID);
+        require(universities[_universityID].courses[_courseID].id == _courseID);
         universities[_universityID].courses[_courseId].active = false;
         return true;
     }

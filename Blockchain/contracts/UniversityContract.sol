@@ -25,7 +25,15 @@ contract UniversityContract {
       return universityStorage.addStudentToCourse(_universityID, _courseID, _studentID);
   }
 
-  function markCourseEnd(uint _universityID, uint _courseIS) public returns (bool){
+  function markCourseEnd(uint _universityID, uint _courseID) public returns (bool){
       return universityStorage.markCourseEnd(_universityID, _courseID);
+  }
+
+  function evaluateCourse(uint _studentID, uint _courseID, uint _grade) public {
+      return studentStorage.evaluateCourse(_courseID, _studentID, _grade);
+  }
+
+  function getStudentGrade(uint _studentID, uint _courseID) public returns(uint){
+      return studentStorage.evaluateCourse(_courseID, _studentID, _grade);
   }
 }

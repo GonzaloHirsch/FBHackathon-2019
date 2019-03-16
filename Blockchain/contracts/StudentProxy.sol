@@ -38,7 +38,7 @@ contract StudentProxy {
         students[_student].course[_course] = Course(_university, _course, 0, true);
     }
 
-    function evalutateCourse(uint _student, uint _courseId, uint _grade) public{
+    function evaluateCourse(uint _student, uint _courseId, uint _grade) public{
         require(students[_student].course[_courseId].courseId != 0);
         require(students[_student].course[_courseId].isActive == true);
         Course storage course = students[_student].course[_courseId];
