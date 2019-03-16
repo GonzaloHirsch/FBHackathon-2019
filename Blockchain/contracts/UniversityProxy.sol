@@ -21,6 +21,7 @@ contract UniversityProxy {
         string name;
         uint id;
         uint numberOfCourses;
+        uint[] activeCourses;
         mapping (uint => Course) courses;
     }
 
@@ -31,7 +32,6 @@ contract UniversityProxy {
     }
 
     function addUniversity(string memory _name, uint _id) public returns(bool){
-      //Verify "master admin" is adding a university
         universities[_id].name  = _name;
         universities[_id].numberOfCourses = 0;
         universities[_id].id = _id;
@@ -46,6 +46,8 @@ contract UniversityProxy {
         require(universities[_universityID].id == _universityID);   //Verify if the university exists
         Course memory newCourse = Course({id:totalCourseCount + 1 , name:_courseName, capacity:_capacity, teacher:_teacher, students: new uint[](_capacity), active: true});
         universities[_universityID].courses[newCourse.id] = newCourse;
+        universities[_universityID].activeCourses.push(newCourse.id);
+        universities[_universityID].numberOfCourses = universities[_universityID].numberOfCourses + 1;
         return true;
     }
 
@@ -57,7 +59,8 @@ contract UniversityProxy {
         require(universities[_universityID].id == _universityID);
         require(universities[_universityID].courses[_courseID].id == _courseID);
         require(universities[_universityID].courses[_courseID].students[_studentID] != _studentID);
-        require(universities[_universityID].courses[_courseID].capacity > niversities[_universityID].courses[_courseID].students.length);
+        require(universities[_universityID].courses[_courseID].capacity > universities[_universityID].courses[_courseID].students.length);
+
         universities[_universityID].courses[_courseID].students.push(_studentID);
         return true;
     }
@@ -65,7 +68,8 @@ contract UniversityProxy {
     function markCourseEnd(uint _universityID, uint _courseID) public returns (bool){
         require(universities[_universityID].id == _universityID);
         require(universities[_universityID].courses[_courseID].id == _courseID);
-        universities[_universityID].courses[_courseId].active = false;
+        universities[_universityID].courses[_courseID].active = false;
+        //TODO: remove from active courses
         return true;
     }
 }

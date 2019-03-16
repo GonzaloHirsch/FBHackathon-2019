@@ -1,6 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./UniversityProxy.sol";
+import "./StudentProxy.sol";
 import "./Main.sol";
 
 contract UniversityContract {
@@ -10,7 +11,11 @@ contract UniversityContract {
 
   constructor(UniversityProxy us, StudentProxy st) public {
     universityStorage = us;
-    studentStorage = st
+    studentStorage = st;
+  }
+
+  function addUniversity(string memory _name, uint _id) public returns(bool){
+      return universityStorage.addUniversity(_name, _id);
   }
 
   function addCourse(uint _universityID, string memory _courseName, uint _capacity, string memory _teacher) public returns(bool){
@@ -33,7 +38,7 @@ contract UniversityContract {
       return studentStorage.evaluateCourse(_courseID, _studentID, _grade);
   }
 
-  function getStudentGrade(uint _studentID, uint _courseID) public returns(uint){
-      return studentStorage.evaluateCourse(_courseID, _studentID, _grade);
+  function getStudentGrade(uint _studentID, uint _courseID) public view returns(uint){
+      return studentStorage.getCourseGrade(_studentID, _courseID);
   }
 }

@@ -6,7 +6,7 @@ import "../contracts/Main.sol";
 
 contract MainTest {
 
-  function testAddStudent() public {
+  /* function testAddStudent() public {
     Main main = Main(DeployedAddresses.Main());
     string memory name = "Nacho";
     uint id = 1;
@@ -14,5 +14,5 @@ contract MainTest {
     main.addStudent(name, id);
 
     Assert.equal(main.getStudentName(id), name, "Should return same string");
-  }
+  } */
 }
