@@ -3,12 +3,14 @@ pragma solidity ^0.5.0;
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
 import "../contracts/StudentProxy.sol";
+import "../contracts/StudentContract.sol";
 import "../contracts/Main.sol";
 
-contract StudentProxyTest {
+contract StudentTest {
 
     Main main;
     StudentProxy sp;
+    StudentContract sc;
     uint studentId = 1;
     uint universityId = 2;
     uint courseId = 3;
@@ -16,7 +18,8 @@ contract StudentProxyTest {
 
     function beforeAll() public{
         main = Main(DeployedAddresses.Main());
-        sp = StudentProxy(main.studentStorage());
+        sc = StudentContract(main.studentContract());
+        sp = StudentProxy(sc.studentStorage());
     }
 
     function testAddUniversity() public {
@@ -31,9 +34,14 @@ contract StudentProxyTest {
         Assert.equal(sp.getCourseUniversity(studentId, courseId), universityId, "University does not match");
     }
 
+    function testCourseProperties() {
+
+    }
+
     function testEvaluateCourse() public{
-        sp.evaluateCourse(studentId, courseId, grade);
+        sc.evaluateCourse(studentId, courseId, grade);
         Assert.equal(sp.getCourseGrade(studentId, courseId), grade, "Grade does not match");
+        Assert.equal(sp.getCourseActive(studentId, courseId), false, "Course is active after evaluation");
     }
 
 
