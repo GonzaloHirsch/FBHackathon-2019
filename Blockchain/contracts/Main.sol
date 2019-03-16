@@ -21,7 +21,7 @@ contract Main {
     }
 
     function getStudentName(uint _id) public view returns(string memory){
-        return studentStorage.getName(_id);
+        return studentStorage.getStudentName(_id);
     }
 
 }
