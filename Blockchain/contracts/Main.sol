@@ -1,13 +1,16 @@
 pragma solidity ^0.5.0;
 
 import "./StudentProxy.sol";
+import "./UniversityProxy.sol";
 
 contract Main {
 
     StudentProxy public studentStorage;
+    UniversityProxy public universityStorage;
 
-    constructor() payable public {
+    constructor() public {
         studentStorage = new StudentProxy();
+        universityStorage = new UniversityProxy();
     }
 
     function addStudent(string memory _name, uint _id) public{

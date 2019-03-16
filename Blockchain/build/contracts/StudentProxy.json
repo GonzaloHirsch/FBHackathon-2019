@@ -2,6 +2,20 @@
   "contractName": "StudentProxy",
   "abi": [
     {
+      "constant": true,
+      "inputs": [],
+      "name": "studentCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -45,24 +59,24 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6080604052600060015534801561001557600080fd5b506103ec806100256000396000f3fe60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630e5eeef7146100515780636b8ff57414610123575b600080fd5b34801561005d57600080fd5b506101216004803603604081101561007457600080fd5b810190808035906020019064010000000081111561009157600080fd5b8201836020820111156100a357600080fd5b803590602001918460018302840111640100000000831117156100c557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291905050506101d7565b005b34801561012f57600080fd5b5061015c6004803603602081101561014657600080fd5b8101908080359060200190929190505050610259565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561019c578082015181840152602081019050610181565b50505050905090810190601f1680156101c95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b600060408051908101604052808481526020018381525090806001815401808255809150509060018203906000526020600020906002020160009091929091909150600082015181600001908051906020019061023592919061031b565b50602082015181600101555050506001600081548092919060010191905055505050565b606060008281548110151561026a57fe5b90600052602060002090600202016000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561030f5780601f106102e45761010080835404028352916020019161030f565b820191906000526020600020905b8154815290600101906020018083116102f257829003601f168201915b50505050509050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061035c57805160ff191683800117855561038a565b8280016001018555821561038a579182015b8281111561038957825182559160200191906001019061036e565b5b509050610397919061039b565b5090565b6103bd91905b808211156103b95760008160009055506001016103a1565b5090565b9056fea165627a7a7230582082b2bdb70918fbd2c76cefa71bc395e064e809451b2d2d6e98aafdd5dee19d000029",
-  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630e5eeef7146100515780636b8ff57414610123575b600080fd5b34801561005d57600080fd5b506101216004803603604081101561007457600080fd5b810190808035906020019064010000000081111561009157600080fd5b8201836020820111156100a357600080fd5b803590602001918460018302840111640100000000831117156100c557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291905050506101d7565b005b34801561012f57600080fd5b5061015c6004803603602081101561014657600080fd5b8101908080359060200190929190505050610259565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561019c578082015181840152602081019050610181565b50505050905090810190601f1680156101c95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b600060408051908101604052808481526020018381525090806001815401808255809150509060018203906000526020600020906002020160009091929091909150600082015181600001908051906020019061023592919061031b565b50602082015181600101555050506001600081548092919060010191905055505050565b606060008281548110151561026a57fe5b90600052602060002090600202016000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561030f5780601f106102e45761010080835404028352916020019161030f565b820191906000526020600020905b8154815290600101906020018083116102f257829003601f168201915b50505050509050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061035c57805160ff191683800117855561038a565b8280016001018555821561038a579182015b8281111561038957825182559160200191906001019061036e565b5b509050610397919061039b565b5090565b6103bd91905b808211156103b95760008160009055506001016103a1565b5090565b9056fea165627a7a7230582082b2bdb70918fbd2c76cefa71bc395e064e809451b2d2d6e98aafdd5dee19d000029",
-  "sourceMap": "29:723:2:-;;;346:1;326:21;;356:69;8:9:-1;5:2;;;30:1;27;20:12;5:2;356:69:2;29:723;;;;;;",
-  "deployedSourceMap": "29:723:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;433:135;;8:9:-1;5:2;;;30:1;27;20:12;5:2;433:135:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;433:135:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;433:135:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;433:135:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;433:135:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;433:135:2;;;;;;;;;;;;;;;;;;;;;;;;;;;574:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;574:115:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;574:115:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;574:115:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;433:135;501:8;515:19;;;;;;;;;523:5;515:19;;;;530:3;515:19;;;501:34;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;501:34:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;546:12;;:14;;;;;;;;;;;;;433:135;;:::o;574:115::-;626:13;659:8;668:7;659:17;;;;;;;;;;;;;;;;;;;;:22;;652:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;574:115;;;:::o;29:723::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\r\n\r\n\r\ncontract StudentProxy{\r\n\r\n    struct Course {\r\n        uint universityId;\r\n        uint courseId;\r\n        uint grade;\r\n    }\r\n\r\n    struct Student {\r\n        string name;\r\n        uint id;\r\n        //Course[] coursesActive;\r\n        //Course[] coursesPast;\r\n    }\r\n\r\n    Student[] students;\r\n    uint studentCount = 0;\r\n\r\n    constructor() public {\r\n        //students = new Student[](7);\r\n    }\r\n\r\n    function addStudent(string memory _name, uint _id) public{\r\n        students.push(Student(_name, _id));\r\n        studentCount++;\r\n    }\r\n    function getName(uint student) public view returns (string memory) {\r\n        return students[student].name;\r\n    }\r\n    /*\r\n    function getId(address student) {\r\n\r\n    }*/\r\n\r\n}\r\n",
+  "bytecode": "0x6080604052600060015534801561001557600080fd5b50610419806100256000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630e5eeef71461005c5780636b8ff5741461012e578063e581f9ee146101e2575b600080fd5b34801561006857600080fd5b5061012c6004803603604081101561007f57600080fd5b810190808035906020019064010000000081111561009c57600080fd5b8201836020820111156100ae57600080fd5b803590602001918460018302840111640100000000831117156100d057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019092919050505061020d565b005b34801561013a57600080fd5b506101676004803603602081101561015157600080fd5b810190808035906020019092919050505061028b565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101a757808201518184015260208101905061018c565b50505050905090810190601f1680156101d45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101ee57600080fd5b506101f7610342565b6040518082815260200191505060405180910390f35b60008060008381526020019081526020016000206000015414151561023157600080fd5b81600080838152602001908152602001600020600101908051906020019061025a929190610348565b5080600080838152602001908152602001600020600001819055506001600081548092919060010191905055505050565b60606000808381526020019081526020016000206001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103365780601f1061030b57610100808354040283529160200191610336565b820191906000526020600020905b81548152906001019060200180831161031957829003601f168201915b50505050509050919050565b60015481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061038957805160ff19168380011785556103b7565b828001600101855582156103b7579182015b828111156103b657825182559160200191906001019061039b565b5b5090506103c491906103c8565b5090565b6103ea91905b808211156103e65760008160009055506001016103ce565b5090565b9056fea165627a7a7230582057f803d192b773e700480ae31de265e5a6e92f86bff08cb42291eec26e7aec620029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630e5eeef71461005c5780636b8ff5741461012e578063e581f9ee146101e2575b600080fd5b34801561006857600080fd5b5061012c6004803603604081101561007f57600080fd5b810190808035906020019064010000000081111561009c57600080fd5b8201836020820111156100ae57600080fd5b803590602001918460018302840111640100000000831117156100d057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019092919050505061020d565b005b34801561013a57600080fd5b506101676004803603602081101561015157600080fd5b810190808035906020019092919050505061028b565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101a757808201518184015260208101905061018c565b50505050905090810190601f1680156101d45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101ee57600080fd5b506101f7610342565b6040518082815260200191505060405180910390f35b60008060008381526020019081526020016000206000015414151561023157600080fd5b81600080838152602001908152602001600020600101908051906020019061025a929190610348565b5080600080838152602001908152602001600020600001819055506001600081548092919060010191905055505050565b60606000808381526020019081526020016000206001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103365780601f1061030b57610100808354040283529160200191610336565b820191906000526020600020905b81548152906001019060200180831161031957829003601f168201915b50505050509050919050565b60015481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061038957805160ff19168380011785556103b7565b828001600101855582156103b7579182015b828111156103b657825182559160200191906001019061039b565b5b5090506103c491906103c8565b5090565b6103ea91905b808211156103e65760008160009055506001016103ce565b5090565b9056fea165627a7a7230582057f803d192b773e700480ae31de265e5a6e92f86bff08cb42291eec26e7aec620029",
+  "sourceMap": "27:717:2:-;;;367:1;340:28;;377:29;8:9:-1;5:2;;;30:1;27;20:12;5:2;377:29:2;27:717;;;;;;",
+  "deployedSourceMap": "27:717:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;414:202;;8:9:-1;5:2;;;30:1;27;20:12;5:2;414:202:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;414:202:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;414:202:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;414:202:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;414:202:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;414:202:2;;;;;;;;;;;;;;;;;;;;;;;;;;;624:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;624:115:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;624:115:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;624:115:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;340:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;340:28:2;;;;;;;;;;;;;;;;;;;;;;;414:202;511:1;491:8;:13;500:3;491:13;;;;;;;;;;;:16;;;:21;483:30;;;;;;;;545:5;524:8;:13;533:3;524:13;;;;;;;;;;;:18;;:26;;;;;;;;;;;;:::i;:::-;;580:3;561:8;:13;570:3;561:13;;;;;;;;;;;:16;;:22;;;;594:12;;:14;;;;;;;;;;;;;414:202;;:::o;624:115::-;676:13;709:8;:17;718:7;709:17;;;;;;;;;;;:22;;702:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;624:115;;;:::o;340:28::-;;;;:::o;27:717::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract StudentProxy{\r\n\r\n    struct Course {\r\n        uint universityId;\r\n        uint courseId;\r\n        uint grade;\r\n    }\r\n\r\n    struct Student {\r\n        uint id;\r\n        string name;\r\n        //Course[] coursesActive;\r\n        //Course[] coursesPast;\r\n    }\r\n\r\n    mapping (uint => Student) students;\r\n    uint public studentCount = 0;\r\n\r\n    constructor() public {\r\n    }\r\n\r\n    function addStudent(string memory _name, uint _id) public {\r\n        require(students[_id].id == 0);\r\n        students[_id].name = _name;\r\n        students[_id].id = _id;\r\n        studentCount++;\r\n    }\r\n\r\n    function getName(uint student) public view returns (string memory) {\r\n        return students[student].name;\r\n    }\r\n\r\n}\r\n",
   "sourcePath": "C:\\Users\\ignac\\Desktop\\Code Repository\\FBHackathon-2019\\Blockchain\\contracts\\StudentProxy.sol",
   "ast": {
     "absolutePath": "/C/Users/ignac/Desktop/Code Repository/FBHackathon-2019/Blockchain/contracts/StudentProxy.sol",
     "exportedSymbols": {
       "StudentProxy": [
-        158
+        182
       ]
     },
-    "id": 159,
+    "id": 183,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 102,
+        "id": 111,
         "literals": [
           "solidity",
           "^",
@@ -78,24 +92,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 158,
+        "id": 182,
         "linearizedBaseContracts": [
-          158
+          182
         ],
         "name": "StudentProxy",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "StudentProxy.Course",
-            "id": 109,
+            "id": 118,
             "members": [
               {
                 "constant": false,
-                "id": 104,
+                "id": 113,
                 "name": "universityId",
                 "nodeType": "VariableDeclaration",
-                "scope": 109,
-                "src": "84:17:2",
+                "scope": 118,
+                "src": "82:17:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -103,10 +117,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 103,
+                  "id": 112,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "84:4:2",
+                  "src": "82:4:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -117,11 +131,11 @@
               },
               {
                 "constant": false,
-                "id": 106,
+                "id": 115,
                 "name": "courseId",
                 "nodeType": "VariableDeclaration",
-                "scope": 109,
-                "src": "112:13:2",
+                "scope": 118,
+                "src": "110:13:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -129,10 +143,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 105,
+                  "id": 114,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "112:4:2",
+                  "src": "110:4:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -143,11 +157,11 @@
               },
               {
                 "constant": false,
-                "id": 108,
+                "id": 117,
                 "name": "grade",
                 "nodeType": "VariableDeclaration",
-                "scope": 109,
-                "src": "136:10:2",
+                "scope": 118,
+                "src": "134:10:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -155,10 +169,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 107,
+                  "id": 116,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "136:4:2",
+                  "src": "134:4:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -170,47 +184,21 @@
             ],
             "name": "Course",
             "nodeType": "StructDefinition",
-            "scope": 158,
-            "src": "59:95:2",
+            "scope": 182,
+            "src": "57:95:2",
             "visibility": "public"
           },
           {
             "canonicalName": "StudentProxy.Student",
-            "id": 114,
+            "id": 123,
             "members": [
               {
                 "constant": false,
-                "id": 111,
-                "name": "name",
-                "nodeType": "VariableDeclaration",
-                "scope": 114,
-                "src": "188:11:2",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
-                },
-                "typeName": {
-                  "id": 110,
-                  "name": "string",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "188:6:2",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_storage_ptr",
-                    "typeString": "string"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
-                "id": 113,
+                "id": 120,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 114,
-                "src": "210:7:2",
+                "scope": 123,
+                "src": "186:7:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -218,13 +206,39 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 112,
+                  "id": 119,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "210:4:2",
+                  "src": "186:4:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 122,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 123,
+                "src": "204:11:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 121,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "204:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
                   }
                 },
                 "value": null,
@@ -233,43 +247,52 @@
             ],
             "name": "Student",
             "nodeType": "StructDefinition",
-            "scope": 158,
-            "src": "162:131:2",
+            "scope": 182,
+            "src": "160:131:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 117,
+            "id": 127,
             "name": "students",
             "nodeType": "VariableDeclaration",
-            "scope": 158,
-            "src": "301:18:2",
+            "scope": 182,
+            "src": "299:34:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Student_$114_storage_$dyn_storage",
-              "typeString": "struct StudentProxy.Student[]"
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+              "typeString": "mapping(uint256 => struct StudentProxy.Student)"
             },
             "typeName": {
-              "baseType": {
-                "contractScope": null,
-                "id": 115,
-                "name": "Student",
-                "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 114,
-                "src": "301:7:2",
+              "id": 126,
+              "keyType": {
+                "id": 124,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "308:4:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Student_$114_storage_ptr",
-                  "typeString": "struct StudentProxy.Student"
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 }
               },
-              "id": 116,
-              "length": null,
-              "nodeType": "ArrayTypeName",
-              "src": "301:9:2",
+              "nodeType": "Mapping",
+              "src": "299:25:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Student_$114_storage_$dyn_storage_ptr",
-                "typeString": "struct StudentProxy.Student[]"
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                "typeString": "mapping(uint256 => struct StudentProxy.Student)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 125,
+                "name": "Student",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 123,
+                "src": "316:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Student_$123_storage_ptr",
+                  "typeString": "struct StudentProxy.Student"
+                }
               }
             },
             "value": null,
@@ -277,11 +300,11 @@
           },
           {
             "constant": false,
-            "id": 120,
+            "id": 130,
             "name": "studentCount",
             "nodeType": "VariableDeclaration",
-            "scope": 158,
-            "src": "326:21:2",
+            "scope": 182,
+            "src": "340:28:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -289,10 +312,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 118,
+              "id": 128,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "326:4:2",
+              "src": "340:4:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -301,14 +324,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 119,
+              "id": 129,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "346:1:2",
+              "src": "367:1:2",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -316,45 +339,45 @@
               },
               "value": "0"
             },
-            "visibility": "internal"
+            "visibility": "public"
           },
           {
             "body": {
-              "id": 123,
+              "id": 133,
               "nodeType": "Block",
-              "src": "377:48:2",
+              "src": "398:8:2",
               "statements": []
             },
             "documentation": null,
-            "id": 124,
+            "id": 134,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 121,
+              "id": 131,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "367:2:2"
+              "src": "388:2:2"
             },
             "returnParameters": {
-              "id": 122,
+              "id": 132,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "377:0:2"
+              "src": "398:0:2"
             },
-            "scope": 158,
-            "src": "356:69:2",
+            "scope": 182,
+            "src": "377:29:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 143,
+              "id": 167,
               "nodeType": "Block",
-              "src": "490:78:2",
+              "src": "472:144:2",
               "statements": [
                 {
                   "expression": {
@@ -362,106 +385,120 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "arguments": [
-                          {
-                            "argumentTypes": null,
-                            "id": 135,
-                            "name": "_name",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 126,
-                            "src": "523:5:2",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_string_memory_ptr",
-                              "typeString": "string memory"
-                            }
-                          },
-                          {
-                            "argumentTypes": null,
-                            "id": 136,
-                            "name": "_id",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 128,
-                            "src": "530:3:2",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          }
-                        ],
-                        "expression": {
-                          "argumentTypes": [
-                            {
-                              "typeIdentifier": "t_string_memory_ptr",
-                              "typeString": "string memory"
-                            },
-                            {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          ],
-                          "id": 134,
-                          "name": "Student",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 114,
-                          "src": "515:7:2",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Student_$114_storage_ptr_$",
-                            "typeString": "type(struct StudentProxy.Student storage pointer)"
-                          }
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
-                        "id": 137,
+                        "id": 147,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
-                        "kind": "structConstructorCall",
                         "lValueRequested": false,
-                        "names": [],
-                        "nodeType": "FunctionCall",
-                        "src": "515:19:2",
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 142,
+                              "name": "students",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 127,
+                              "src": "491:8:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                                "typeString": "mapping(uint256 => struct StudentProxy.Student storage ref)"
+                              }
+                            },
+                            "id": 144,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 143,
+                              "name": "_id",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 138,
+                              "src": "500:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "491:13:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Student_$123_storage",
+                              "typeString": "struct StudentProxy.Student storage ref"
+                            }
+                          },
+                          "id": 145,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "id",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 120,
+                          "src": "491:16:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 146,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "511:1:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "491:21:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Student_$114_memory",
-                          "typeString": "struct StudentProxy.Student memory"
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Student_$114_memory",
-                          "typeString": "struct StudentProxy.Student memory"
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
                         }
                       ],
-                      "expression": {
-                        "argumentTypes": null,
-                        "id": 131,
-                        "name": "students",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 117,
-                        "src": "501:8:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Student_$114_storage_$dyn_storage",
-                          "typeString": "struct StudentProxy.Student storage ref[] storage ref"
-                        }
-                      },
-                      "id": 133,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "memberName": "push",
-                      "nodeType": "MemberAccess",
-                      "referencedDeclaration": null,
-                      "src": "501:13:2",
+                      "id": 141,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        270,
+                        271
+                      ],
+                      "referencedDeclaration": 270,
+                      "src": "483:7:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Student_$114_storage_$returns$_t_uint256_$",
-                        "typeString": "function (struct StudentProxy.Student storage ref) returns (uint256)"
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 138,
+                    "id": 148,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -469,20 +506,198 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "501:34:2",
+                    "src": "483:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 149,
+                  "nodeType": "ExpressionStatement",
+                  "src": "483:30:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 155,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 150,
+                          "name": "students",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 127,
+                          "src": "524:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                            "typeString": "mapping(uint256 => struct StudentProxy.Student storage ref)"
+                          }
+                        },
+                        "id": 152,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 151,
+                          "name": "_id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 138,
+                          "src": "533:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "524:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Student_$123_storage",
+                          "typeString": "struct StudentProxy.Student storage ref"
+                        }
+                      },
+                      "id": 153,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "name",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 122,
+                      "src": "524:18:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 154,
+                      "name": "_name",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 136,
+                      "src": "545:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "524:26:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 156,
+                  "nodeType": "ExpressionStatement",
+                  "src": "524:26:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 162,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 157,
+                          "name": "students",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 127,
+                          "src": "561:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                            "typeString": "mapping(uint256 => struct StudentProxy.Student storage ref)"
+                          }
+                        },
+                        "id": 159,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 158,
+                          "name": "_id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 138,
+                          "src": "570:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "561:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Student_$123_storage",
+                          "typeString": "struct StudentProxy.Student storage ref"
+                        }
+                      },
+                      "id": 160,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "id",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 120,
+                      "src": "561:16:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 161,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 138,
+                      "src": "580:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "561:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 139,
+                  "id": 163,
                   "nodeType": "ExpressionStatement",
-                  "src": "501:34:2"
+                  "src": "561:22:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 141,
+                    "id": 165,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -490,15 +705,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "546:14:2",
+                    "src": "594:14:2",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 140,
+                      "id": 164,
                       "name": "studentCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 120,
-                      "src": "546:12:2",
+                      "referencedDeclaration": 130,
+                      "src": "594:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -509,30 +724,30 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 142,
+                  "id": 166,
                   "nodeType": "ExpressionStatement",
-                  "src": "546:14:2"
+                  "src": "594:14:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 144,
+            "id": 168,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "addStudent",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 129,
+              "id": 139,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 126,
+                  "id": 136,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 144,
-                  "src": "453:19:2",
+                  "scope": 168,
+                  "src": "434:19:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -540,10 +755,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 125,
+                    "id": 135,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "453:6:2",
+                    "src": "434:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -554,11 +769,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 128,
+                  "id": 138,
                   "name": "_id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 144,
-                  "src": "474:8:2",
+                  "scope": 168,
+                  "src": "455:8:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -566,10 +781,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 127,
+                    "id": 137,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "474:4:2",
+                    "src": "455:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -579,25 +794,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "452:31:2"
+              "src": "433:31:2"
             },
             "returnParameters": {
-              "id": 130,
+              "id": 140,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "490:0:2"
+              "src": "472:0:2"
             },
-            "scope": 158,
-            "src": "433:135:2",
+            "scope": 182,
+            "src": "414:202:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 156,
+              "id": 180,
               "nodeType": "Block",
-              "src": "641:48:2",
+              "src": "691:48:2",
               "statements": [
                 {
                   "expression": {
@@ -606,26 +821,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 151,
+                        "id": 175,
                         "name": "students",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 117,
-                        "src": "659:8:2",
+                        "referencedDeclaration": 127,
+                        "src": "709:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Student_$114_storage_$dyn_storage",
-                          "typeString": "struct StudentProxy.Student storage ref[] storage ref"
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                          "typeString": "mapping(uint256 => struct StudentProxy.Student storage ref)"
                         }
                       },
-                      "id": 153,
+                      "id": 177,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 152,
+                        "id": 176,
                         "name": "student",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 146,
-                        "src": "668:7:2",
+                        "referencedDeclaration": 170,
+                        "src": "718:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -636,51 +851,51 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "659:17:2",
+                      "src": "709:17:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Student_$114_storage",
+                        "typeIdentifier": "t_struct$_Student_$123_storage",
                         "typeString": "struct StudentProxy.Student storage ref"
                       }
                     },
-                    "id": 154,
+                    "id": 178,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "name",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 111,
-                    "src": "659:22:2",
+                    "referencedDeclaration": 122,
+                    "src": "709:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 150,
-                  "id": 155,
+                  "functionReturnParameters": 174,
+                  "id": 179,
                   "nodeType": "Return",
-                  "src": "652:29:2"
+                  "src": "702:29:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 157,
+            "id": 181,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getName",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 147,
+              "id": 171,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 146,
+                  "id": 170,
                   "name": "student",
                   "nodeType": "VariableDeclaration",
-                  "scope": 157,
-                  "src": "591:12:2",
+                  "scope": 181,
+                  "src": "641:12:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -688,10 +903,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 145,
+                    "id": 169,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "591:4:2",
+                    "src": "641:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -701,19 +916,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "590:14:2"
+              "src": "640:14:2"
             },
             "returnParameters": {
-              "id": 150,
+              "id": 174,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 149,
+                  "id": 173,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 157,
-                  "src": "626:13:2",
+                  "scope": 181,
+                  "src": "676:13:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -721,10 +936,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 148,
+                    "id": 172,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "626:6:2",
+                    "src": "676:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -734,33 +949,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "625:15:2"
+              "src": "675:15:2"
             },
-            "scope": 158,
-            "src": "574:115:2",
+            "scope": 182,
+            "src": "624:115:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 159,
-        "src": "29:723:2"
+        "scope": 183,
+        "src": "27:717:2"
       }
     ],
-    "src": "0:754:2"
+    "src": "0:746:2"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/ignac/Desktop/Code Repository/FBHackathon-2019/Blockchain/contracts/StudentProxy.sol",
     "exportedSymbols": {
       "StudentProxy": [
-        158
+        182
       ]
     },
-    "id": 159,
+    "id": 183,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 102,
+        "id": 111,
         "literals": [
           "solidity",
           "^",
@@ -776,24 +991,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 158,
+        "id": 182,
         "linearizedBaseContracts": [
-          158
+          182
         ],
         "name": "StudentProxy",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "StudentProxy.Course",
-            "id": 109,
+            "id": 118,
             "members": [
               {
                 "constant": false,
-                "id": 104,
+                "id": 113,
                 "name": "universityId",
                 "nodeType": "VariableDeclaration",
-                "scope": 109,
-                "src": "84:17:2",
+                "scope": 118,
+                "src": "82:17:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -801,10 +1016,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 103,
+                  "id": 112,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "84:4:2",
+                  "src": "82:4:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -815,11 +1030,11 @@
               },
               {
                 "constant": false,
-                "id": 106,
+                "id": 115,
                 "name": "courseId",
                 "nodeType": "VariableDeclaration",
-                "scope": 109,
-                "src": "112:13:2",
+                "scope": 118,
+                "src": "110:13:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -827,10 +1042,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 105,
+                  "id": 114,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "112:4:2",
+                  "src": "110:4:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -841,11 +1056,11 @@
               },
               {
                 "constant": false,
-                "id": 108,
+                "id": 117,
                 "name": "grade",
                 "nodeType": "VariableDeclaration",
-                "scope": 109,
-                "src": "136:10:2",
+                "scope": 118,
+                "src": "134:10:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -853,10 +1068,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 107,
+                  "id": 116,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "136:4:2",
+                  "src": "134:4:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -868,47 +1083,21 @@
             ],
             "name": "Course",
             "nodeType": "StructDefinition",
-            "scope": 158,
-            "src": "59:95:2",
+            "scope": 182,
+            "src": "57:95:2",
             "visibility": "public"
           },
           {
             "canonicalName": "StudentProxy.Student",
-            "id": 114,
+            "id": 123,
             "members": [
               {
                 "constant": false,
-                "id": 111,
-                "name": "name",
-                "nodeType": "VariableDeclaration",
-                "scope": 114,
-                "src": "188:11:2",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
-                },
-                "typeName": {
-                  "id": 110,
-                  "name": "string",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "188:6:2",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_storage_ptr",
-                    "typeString": "string"
-                  }
-                },
-                "value": null,
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
-                "id": 113,
+                "id": 120,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 114,
-                "src": "210:7:2",
+                "scope": 123,
+                "src": "186:7:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -916,13 +1105,39 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 112,
+                  "id": 119,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "210:4:2",
+                  "src": "186:4:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 122,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 123,
+                "src": "204:11:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 121,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "204:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
                   }
                 },
                 "value": null,
@@ -931,43 +1146,52 @@
             ],
             "name": "Student",
             "nodeType": "StructDefinition",
-            "scope": 158,
-            "src": "162:131:2",
+            "scope": 182,
+            "src": "160:131:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 117,
+            "id": 127,
             "name": "students",
             "nodeType": "VariableDeclaration",
-            "scope": 158,
-            "src": "301:18:2",
+            "scope": 182,
+            "src": "299:34:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Student_$114_storage_$dyn_storage",
-              "typeString": "struct StudentProxy.Student[]"
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+              "typeString": "mapping(uint256 => struct StudentProxy.Student)"
             },
             "typeName": {
-              "baseType": {
-                "contractScope": null,
-                "id": 115,
-                "name": "Student",
-                "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 114,
-                "src": "301:7:2",
+              "id": 126,
+              "keyType": {
+                "id": 124,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "308:4:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Student_$114_storage_ptr",
-                  "typeString": "struct StudentProxy.Student"
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 }
               },
-              "id": 116,
-              "length": null,
-              "nodeType": "ArrayTypeName",
-              "src": "301:9:2",
+              "nodeType": "Mapping",
+              "src": "299:25:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Student_$114_storage_$dyn_storage_ptr",
-                "typeString": "struct StudentProxy.Student[]"
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                "typeString": "mapping(uint256 => struct StudentProxy.Student)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 125,
+                "name": "Student",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 123,
+                "src": "316:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Student_$123_storage_ptr",
+                  "typeString": "struct StudentProxy.Student"
+                }
               }
             },
             "value": null,
@@ -975,11 +1199,11 @@
           },
           {
             "constant": false,
-            "id": 120,
+            "id": 130,
             "name": "studentCount",
             "nodeType": "VariableDeclaration",
-            "scope": 158,
-            "src": "326:21:2",
+            "scope": 182,
+            "src": "340:28:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -987,10 +1211,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 118,
+              "id": 128,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "326:4:2",
+              "src": "340:4:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -999,14 +1223,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 119,
+              "id": 129,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "346:1:2",
+              "src": "367:1:2",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -1014,45 +1238,45 @@
               },
               "value": "0"
             },
-            "visibility": "internal"
+            "visibility": "public"
           },
           {
             "body": {
-              "id": 123,
+              "id": 133,
               "nodeType": "Block",
-              "src": "377:48:2",
+              "src": "398:8:2",
               "statements": []
             },
             "documentation": null,
-            "id": 124,
+            "id": 134,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 121,
+              "id": 131,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "367:2:2"
+              "src": "388:2:2"
             },
             "returnParameters": {
-              "id": 122,
+              "id": 132,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "377:0:2"
+              "src": "398:0:2"
             },
-            "scope": 158,
-            "src": "356:69:2",
+            "scope": 182,
+            "src": "377:29:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 143,
+              "id": 167,
               "nodeType": "Block",
-              "src": "490:78:2",
+              "src": "472:144:2",
               "statements": [
                 {
                   "expression": {
@@ -1060,106 +1284,120 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "arguments": [
-                          {
-                            "argumentTypes": null,
-                            "id": 135,
-                            "name": "_name",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 126,
-                            "src": "523:5:2",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_string_memory_ptr",
-                              "typeString": "string memory"
-                            }
-                          },
-                          {
-                            "argumentTypes": null,
-                            "id": 136,
-                            "name": "_id",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 128,
-                            "src": "530:3:2",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          }
-                        ],
-                        "expression": {
-                          "argumentTypes": [
-                            {
-                              "typeIdentifier": "t_string_memory_ptr",
-                              "typeString": "string memory"
-                            },
-                            {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          ],
-                          "id": 134,
-                          "name": "Student",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 114,
-                          "src": "515:7:2",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Student_$114_storage_ptr_$",
-                            "typeString": "type(struct StudentProxy.Student storage pointer)"
-                          }
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
-                        "id": 137,
+                        "id": 147,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
-                        "kind": "structConstructorCall",
                         "lValueRequested": false,
-                        "names": [],
-                        "nodeType": "FunctionCall",
-                        "src": "515:19:2",
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 142,
+                              "name": "students",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 127,
+                              "src": "491:8:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                                "typeString": "mapping(uint256 => struct StudentProxy.Student storage ref)"
+                              }
+                            },
+                            "id": 144,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 143,
+                              "name": "_id",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 138,
+                              "src": "500:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "491:13:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Student_$123_storage",
+                              "typeString": "struct StudentProxy.Student storage ref"
+                            }
+                          },
+                          "id": 145,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "id",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 120,
+                          "src": "491:16:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 146,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "511:1:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "491:21:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Student_$114_memory",
-                          "typeString": "struct StudentProxy.Student memory"
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Student_$114_memory",
-                          "typeString": "struct StudentProxy.Student memory"
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
                         }
                       ],
-                      "expression": {
-                        "argumentTypes": null,
-                        "id": 131,
-                        "name": "students",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 117,
-                        "src": "501:8:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Student_$114_storage_$dyn_storage",
-                          "typeString": "struct StudentProxy.Student storage ref[] storage ref"
-                        }
-                      },
-                      "id": 133,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "memberName": "push",
-                      "nodeType": "MemberAccess",
-                      "referencedDeclaration": null,
-                      "src": "501:13:2",
+                      "id": 141,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        270,
+                        271
+                      ],
+                      "referencedDeclaration": 270,
+                      "src": "483:7:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Student_$114_storage_$returns$_t_uint256_$",
-                        "typeString": "function (struct StudentProxy.Student storage ref) returns (uint256)"
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 138,
+                    "id": 148,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1167,20 +1405,198 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "501:34:2",
+                    "src": "483:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 149,
+                  "nodeType": "ExpressionStatement",
+                  "src": "483:30:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 155,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 150,
+                          "name": "students",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 127,
+                          "src": "524:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                            "typeString": "mapping(uint256 => struct StudentProxy.Student storage ref)"
+                          }
+                        },
+                        "id": 152,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 151,
+                          "name": "_id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 138,
+                          "src": "533:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "524:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Student_$123_storage",
+                          "typeString": "struct StudentProxy.Student storage ref"
+                        }
+                      },
+                      "id": 153,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "name",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 122,
+                      "src": "524:18:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 154,
+                      "name": "_name",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 136,
+                      "src": "545:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "524:26:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 156,
+                  "nodeType": "ExpressionStatement",
+                  "src": "524:26:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 162,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 157,
+                          "name": "students",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 127,
+                          "src": "561:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                            "typeString": "mapping(uint256 => struct StudentProxy.Student storage ref)"
+                          }
+                        },
+                        "id": 159,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 158,
+                          "name": "_id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 138,
+                          "src": "570:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "561:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Student_$123_storage",
+                          "typeString": "struct StudentProxy.Student storage ref"
+                        }
+                      },
+                      "id": 160,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "id",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 120,
+                      "src": "561:16:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 161,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 138,
+                      "src": "580:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "561:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 139,
+                  "id": 163,
                   "nodeType": "ExpressionStatement",
-                  "src": "501:34:2"
+                  "src": "561:22:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 141,
+                    "id": 165,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1188,15 +1604,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "546:14:2",
+                    "src": "594:14:2",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 140,
+                      "id": 164,
                       "name": "studentCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 120,
-                      "src": "546:12:2",
+                      "referencedDeclaration": 130,
+                      "src": "594:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1207,30 +1623,30 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 142,
+                  "id": 166,
                   "nodeType": "ExpressionStatement",
-                  "src": "546:14:2"
+                  "src": "594:14:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 144,
+            "id": 168,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "addStudent",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 129,
+              "id": 139,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 126,
+                  "id": 136,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 144,
-                  "src": "453:19:2",
+                  "scope": 168,
+                  "src": "434:19:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1238,10 +1654,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 125,
+                    "id": 135,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "453:6:2",
+                    "src": "434:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1252,11 +1668,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 128,
+                  "id": 138,
                   "name": "_id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 144,
-                  "src": "474:8:2",
+                  "scope": 168,
+                  "src": "455:8:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1264,10 +1680,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 127,
+                    "id": 137,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "474:4:2",
+                    "src": "455:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1277,25 +1693,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "452:31:2"
+              "src": "433:31:2"
             },
             "returnParameters": {
-              "id": 130,
+              "id": 140,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "490:0:2"
+              "src": "472:0:2"
             },
-            "scope": 158,
-            "src": "433:135:2",
+            "scope": 182,
+            "src": "414:202:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 156,
+              "id": 180,
               "nodeType": "Block",
-              "src": "641:48:2",
+              "src": "691:48:2",
               "statements": [
                 {
                   "expression": {
@@ -1304,26 +1720,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 151,
+                        "id": 175,
                         "name": "students",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 117,
-                        "src": "659:8:2",
+                        "referencedDeclaration": 127,
+                        "src": "709:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Student_$114_storage_$dyn_storage",
-                          "typeString": "struct StudentProxy.Student storage ref[] storage ref"
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Student_$123_storage_$",
+                          "typeString": "mapping(uint256 => struct StudentProxy.Student storage ref)"
                         }
                       },
-                      "id": 153,
+                      "id": 177,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 152,
+                        "id": 176,
                         "name": "student",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 146,
-                        "src": "668:7:2",
+                        "referencedDeclaration": 170,
+                        "src": "718:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1334,51 +1750,51 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "659:17:2",
+                      "src": "709:17:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Student_$114_storage",
+                        "typeIdentifier": "t_struct$_Student_$123_storage",
                         "typeString": "struct StudentProxy.Student storage ref"
                       }
                     },
-                    "id": 154,
+                    "id": 178,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "name",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 111,
-                    "src": "659:22:2",
+                    "referencedDeclaration": 122,
+                    "src": "709:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 150,
-                  "id": 155,
+                  "functionReturnParameters": 174,
+                  "id": 179,
                   "nodeType": "Return",
-                  "src": "652:29:2"
+                  "src": "702:29:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 157,
+            "id": 181,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getName",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 147,
+              "id": 171,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 146,
+                  "id": 170,
                   "name": "student",
                   "nodeType": "VariableDeclaration",
-                  "scope": 157,
-                  "src": "591:12:2",
+                  "scope": 181,
+                  "src": "641:12:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1386,10 +1802,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 145,
+                    "id": 169,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "591:4:2",
+                    "src": "641:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1399,19 +1815,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "590:14:2"
+              "src": "640:14:2"
             },
             "returnParameters": {
-              "id": 150,
+              "id": 174,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 149,
+                  "id": 173,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 157,
-                  "src": "626:13:2",
+                  "scope": 181,
+                  "src": "676:13:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1419,10 +1835,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 148,
+                    "id": 172,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "626:6:2",
+                    "src": "676:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1432,20 +1848,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "625:15:2"
+              "src": "675:15:2"
             },
-            "scope": 158,
-            "src": "574:115:2",
+            "scope": 182,
+            "src": "624:115:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 159,
-        "src": "29:723:2"
+        "scope": 183,
+        "src": "27:717:2"
       }
     ],
-    "src": "0:754:2"
+    "src": "0:746:2"
   },
   "compiler": {
     "name": "solc",
@@ -1453,7 +1869,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.3",
-  "updatedAt": "2019-03-15T05:11:06.890Z",
+  "updatedAt": "2019-03-16T03:51:50.706Z",
   "devdoc": {
     "methods": {}
   },

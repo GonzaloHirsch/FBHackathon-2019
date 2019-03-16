@@ -5,10 +5,14 @@ import "truffle/DeployedAddresses.sol";
 import "../contracts/Main.sol";
 
 contract MainTest {
+
   function testAddStudent() public {
     Main main = Main(DeployedAddresses.Main());
-    string memory expected = "Nacho";
+    string memory name = "Nacho";
+    uint id = 1;
 
-    Assert.equal(main.addStudent("Nacho"), expected, "Should return same string");
+    main.addStudent(name, id);
+
+    Assert.equal(main.getStudentName(id), name, "Should return same string");
   }
 }

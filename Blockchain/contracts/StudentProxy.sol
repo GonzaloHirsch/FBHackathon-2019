@@ -1,6 +1,5 @@
 pragma solidity ^0.5.0;
 
-
 contract StudentProxy{
 
     struct Course {
@@ -10,29 +9,27 @@ contract StudentProxy{
     }
 
     struct Student {
-        string name;
         uint id;
+        string name;
         //Course[] coursesActive;
         //Course[] coursesPast;
     }
 
-    Student[] students;
-    uint studentCount = 0;
+    mapping (uint => Student) students;
+    uint public studentCount = 0;
 
     constructor() public {
-        //students = new Student[](7);
     }
 
-    function addStudent(string memory _name, uint _id) public{
-        students.push(Student(_name, _id));
+    function addStudent(string memory _name, uint _id) public {
+        require(students[_id].id == 0);
+        students[_id].name = _name;
+        students[_id].id = _id;
         studentCount++;
     }
+
     function getName(uint student) public view returns (string memory) {
         return students[student].name;
     }
-    /*
-    function getId(address student) {
-
-    }*/
 
 }
