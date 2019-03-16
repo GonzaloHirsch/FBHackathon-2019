@@ -33,7 +33,7 @@ contract StudentProxyTest {
 
     function testEvaluateCourse() public{
         sp.evaluateCourse(studentId, courseId, grade);
-        Assert.equal(sp.getCourseGrade(studentId, courseId), grade, "Grade does not match
+        Assert.equal(sp.getCourseGrade(studentId, courseId), grade, "Grade does not match");
     }
 
 
