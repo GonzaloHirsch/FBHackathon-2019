@@ -38,21 +38,34 @@ contract StudentProxy {
         students[_student].courses[_course] = Course(_university, _course, 0, true);
     }
 
-    function evaluateCourse(uint _student, uint _courseId, uint _grade) public{
-        require(students[_student].courses[_courseId].courseId == _courseId);
-        require(students[_student].courses[_courseId].isActive == true);
-        Course storage course = students[_student].courses[_courseId];
-        course.isActive = false;
-        course.grade = _grade;
+    function setCourseActive(uint _student, uint _course, bool _isActive) public {
+        require(students[_student].courses[_course].courseId == _course);
+        students[_student].courses[_courseId].isActive(_isActive);
+    }
+
+    function setCourseGrade(uint _student, uint _course, uint _grade) {
+        require(students[_student].courses[_course].courseId == _course);
+        students[_student].courses[_course].grade = _grade;
     }
 
     function getCourses(uint _student) public view returns (uint[] memory) {
+        require(students[_student].courses[_course].courseId == _course);
         return students[_student].coursesId;
+    }
+
+    function getCourseActive(uint _student, uint _course) public returns (bool) {
+        require(students[_student].courses[_course].courseId == _course);
+        return students[_student].courses[_course].isActive;
     }
 
     function getCourseGrade(uint _student, uint _course) public returns (uint) {
         require(students[_student].courses[_course].courseId == _course);
         return students[_student].courses[_course].grade;
+    }
+
+    function getCourseUniversity(uint _student, uint _course) public returns (uint) {
+        require(students[_student].courses[_course].courseId == _course);
+        return students[_student].courses[_course].universityId;
     }
 
 
