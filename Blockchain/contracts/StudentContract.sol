@@ -5,7 +5,7 @@ import "./StudentProxy.sol";
 contract StudentContract {
 
 
-    StudentProxy studentStorage;
+    StudentProxy public studentStorage;
 
     constructor() public {
         studentStorage = new StudentProxy();
@@ -15,9 +15,5 @@ contract StudentContract {
         require(studentStorage.getCourseActive(_student, _course) == true);
         studentStorage.setCourseActive(_student, _course, false);
         studentStorage.setCourseGrade(_student, _course, _grade);
-    }
-
-    function getStorage() public returns(address){
-        return studentStorage;
     }
 }

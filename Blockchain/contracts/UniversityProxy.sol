@@ -64,7 +64,7 @@ contract UniversityProxy {
         return true;
     }
 
-    function findInArray(uint[] memory arrayToSearch, uint item) private view returns(bool){
+    function findInArray(uint[] memory arrayToSearch, uint item) private pure returns(bool){
         uint length = arrayToSearch.length;
         for (uint i = 0; i < length; i++) {
             if (arrayToSearch[i] == item){

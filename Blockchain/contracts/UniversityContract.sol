@@ -10,9 +10,10 @@ contract UniversityContract {
   StudentProxy public studentStorage;
   StudentContract public studentContract;
 
-  constructor(UniversityProxy us, StudentProxy st) public {
+  constructor(UniversityProxy us, StudentContract sc) public {
     universityStorage = us;
-    studentStorage = studentContract.getStorage();
+    studentContract = sc;
+    studentStorage = StudentProxy(studentContract.studentStorage());
   }
 
   function addCourse(uint _universityID, string memory _courseName, uint _capacity, string memory _teacher) public returns(bool){
@@ -35,7 +36,7 @@ contract UniversityContract {
       return studentContract.evaluateCourse(_courseID, _studentID, _grade);
   }
 
-  function getStudentGrade(uint _studentID, uint _courseID) public returns(uint){
+  function getStudentGrade(uint _studentID, uint _courseID) public view returns(uint){
       return studentStorage.getCourseGrade(_courseID, _studentID);
   }
 }
