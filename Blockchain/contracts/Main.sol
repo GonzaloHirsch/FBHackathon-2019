@@ -10,18 +10,18 @@ contract Main {
     UniversityProxy public universityStorage;
     UniversityContract public universityContract;
 
+    address private owner;
+
     constructor() public {
+        owner = msg.sender;
         studentStorage = new StudentProxy();
         universityStorage = new UniversityProxy();
-        universityContract = new UniversityContract(universityStorage);
+        universityContract = new UniversityContract(universityStorage, studentStorage);
     }
 
-    function addStudent(string memory _name, uint _id) public{
-        studentStorage.addStudent(_name, _id);
-    }
-
-    function getStudentName(uint _id) public view returns(string memory){
-        return studentStorage.getStudentName(_id);
+    function addUniversity(string memory _name, uint _id) public returns(bool){
+        require(owner == msg.sender);
+        return universityStorage.addUniversity(_name, _id);
     }
 
 }

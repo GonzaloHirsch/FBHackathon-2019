@@ -57,8 +57,7 @@ contract StudentProxy {
         require(students[_student].courses[_course].courseId == _course);
         return students[_student].courses[_course].isActive;
     }
-
-    function getCourseGrade(uint _student, uint _course) public returns (uint) {
+    function getCourseGrade(uint _student, uint _course) public view returns (uint) {
         require(students[_student].courses[_course].courseId == _course);
         return students[_student].courses[_course].grade;
     }
