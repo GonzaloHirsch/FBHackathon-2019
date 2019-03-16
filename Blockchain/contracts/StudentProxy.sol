@@ -13,7 +13,7 @@ contract StudentProxy {
         uint id;
         string name;
         uint[] coursesId;
-        mapping (uint => Course) course;
+        mapping (uint => Course) courses;
     }
 
     mapping (uint => Student) students;
@@ -35,19 +35,24 @@ contract StudentProxy {
 
     function addCourse(uint _student, uint _university, uint _course) public {
         students[_student].coursesId.push(_course);
-        students[_student].course[_course] = Course(_university, _course, 0, true);
+        students[_student].courses[_course] = Course(_university, _course, 0, true);
     }
 
-    function evalutateCourse(uint _student, uint _courseId, uint _grade) public{
-        require(students[_student].course[_courseId].courseId != 0);
-        require(students[_student].course[_courseId].isActive == true);
-        Course storage course = students[_student].course[_courseId];
+    function evaluateCourse(uint _student, uint _courseId, uint _grade) public{
+        require(students[_student].courses[_courseId].courseId == _courseId);
+        require(students[_student].courses[_courseId].isActive == true);
+        Course storage course = students[_student].courses[_courseId];
         course.isActive = false;
         course.grade = _grade;
     }
 
-    function getCourses(uint _student) public returns (uint[] memory) {
+    function getCourses(uint _student) public view returns (uint[] memory) {
         return students[_student].coursesId;
+    }
+
+    function getCourseGrade(uint _student, uint _course) public returns (uint) {
+        require(students[_student].courses[_course].courseId == _course);
+        return students[_student].courses[_course].grade;
     }
 
 

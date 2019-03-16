@@ -9,6 +9,10 @@ contract StudentProxyTest {
 
     Main main;
     StudentProxy sp;
+    uint studentId = 1;
+    uint universityId = 2;
+    uint courseId = 3;
+    uint grade = 10;
 
     function beforeAll() public{
         main = Main(DeployedAddresses.Main());
@@ -16,14 +20,19 @@ contract StudentProxyTest {
     }
 
     function testAddUniversity() public {
-        string memory name = "Nacho Test";
-        uint id = 1;
-        sp.addStudent(name,id);
-        Assert.equal(sp.getStudentName(id),name, "Name does not match");
+        string memory studentName = "Nacho Student";
+        sp.addStudent(studentName,studentId);
+        Assert.equal(sp.getStudentName(studentId),studentName, "Name does not match");
     }
 
-    function testAddCourse() {
-        //Empty
+    function testAddCourse() public {
+        sp.addCourse(studentId, universityId, courseId);
+        Assert.equal(sp.getCourses(studentId)[0], courseId, "Course does not match");
+    }
+
+    function testEvaluateCourse() public{
+        sp.evaluateCourse(studentId, courseId, grade);
+        Assert.equal(sp.getCourseGrade(studentId, courseId), grade, "Grade does not match");
     }
 
 
