@@ -27,6 +27,7 @@ contract UniversityContractTest {
       uc.addUniversity(name, id);
       uc.addCourse(id, courseName, capacity, teacher);
       sp.addStudent(studentName, idStudent);
+      //Assert.equal(uc.getLength(id, idSubject), 0, "Bla");
       uc.addStudentToCourse(id, idSubject, idStudent);
       uc.evaluateCourse(idStudent, idSubject, 10);
       Assert.equal(uc.getStudentGrade(idStudent, idSubject), 10, "Does not match");

@@ -14,6 +14,7 @@ contract UniversityProxy {
         uint capacity;
         string teacher;
         bool active;
+        uint amountOfStudents;
         uint[] students;
     }
 
@@ -44,7 +45,7 @@ contract UniversityProxy {
 
     function addCourse(uint _universityID, string memory _courseName, uint _capacity, string memory _teacher) public returns(bool){
         require(universities[_universityID].id == _universityID);   //Verify if the university exists
-        Course memory newCourse = Course({id:totalCourseCount + 1 , name:_courseName, capacity:_capacity, teacher:_teacher, students: new uint[](_capacity), active: true});
+        Course memory newCourse = Course({id:totalCourseCount + 1 , name:_courseName, capacity:_capacity, teacher:_teacher, students: new uint[](_capacity), amountOfStudents: 0, active: true});
         universities[_universityID].courses[newCourse.id] = newCourse;
         universities[_universityID].activeCourses.push(newCourse.id);
         universities[_universityID].numberOfCourses = universities[_universityID].numberOfCourses + 1;
@@ -59,9 +60,13 @@ contract UniversityProxy {
         require(universities[_universityID].id == _universityID);
         require(universities[_universityID].courses[_courseID].id == _courseID);
         require(!findInArray(universities[_universityID].courses[_courseID].students, _studentID));
-        require(universities[_universityID].courses[_courseID].capacity > universities[_universityID].courses[_courseID].students.length);
+        require(universities[_universityID].courses[_courseID].capacity > universities[_universityID].courses[_courseID].amountOfStudents);
         universities[_universityID].courses[_courseID].students.push(_studentID);
         return true;
+    }
+
+    function getLength(uint _universityID, uint _courseID) public view returns (uint){
+      return universities[_universityID].courses[_courseID].students.length;
     }
 
     function findInArray(uint[] memory arrayToSearch, uint item) private pure returns(bool){

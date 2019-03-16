@@ -33,10 +33,10 @@ contract StudentTest {
         Assert.equal(sp.getCourses(studentId)[0], courseId, "Course does not match");
         Assert.equal(sp.getCourseUniversity(studentId, courseId), universityId, "University does not match");
     }
-
+/* 
     function testCourseProperties() {
 
-    }
+    } */
 
     function testEvaluateCourse() public{
         sc.evaluateCourse(studentId, courseId, grade);
