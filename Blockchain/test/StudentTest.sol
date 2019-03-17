@@ -12,8 +12,8 @@ contract StudentTest {
     StudentProxy sp;
     StudentContract sc;
     uint studentId = 1;
-    uint universityId = 2;
-    uint courseId = 3;
+    uint universityId = 1;
+    uint courseId = 1;
     uint grade = 10;
 
     function beforeAll() public{
@@ -33,15 +33,23 @@ contract StudentTest {
         Assert.equal(sp.getCourses(studentId)[0], courseId, "Course does not match");
         Assert.equal(sp.getCourseUniversity(studentId, courseId), universityId, "University does not match");
     }
-/* 
-    function testCourseProperties() {
-
-    } */
 
     function testEvaluateCourse() public{
         sc.evaluateCourse(studentId, courseId, grade);
         Assert.equal(sp.getCourseGrade(studentId, courseId), grade, "Grade does not match");
         Assert.equal(sp.getCourseActive(studentId, courseId), false, "Course is active after evaluation");
+    }
+
+    function testGetActiveCourses() public{
+        uint _student = 2;
+        sp.addStudent("Student", _student);
+        for(uint i = 0; i < 10; i++){
+            sp.addCourse(_student, 2, i);
+        }
+
+        for(uint i = 0; i < 10; i++){
+            Assert.equal(sc.getActiveCourses(_student)[i], i, "Active courses does not match");
+        }
     }
 
 
