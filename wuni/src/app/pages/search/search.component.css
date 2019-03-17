@@ -11,6 +11,10 @@ font-family: bebasRegular;
 src: url(./../../../assets/fonts/BebasNeue-Regular.otf);
 }
 
+.container {
+  margin-top: 0;
+}
+
 .title {
   width: 100%;
   text-align: left;
@@ -54,3 +58,53 @@ src: url(./../../../assets/fonts/BebasNeue-Regular.otf);
      color: #333;
      margin: 10px 0px;
  }
+
+.option {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: #333;
+  font-family: bebasRegular;
+  font-size: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.options {
+  margin-bottom: 10px;
+}
+
+.top {
+  color: black;
+  font-size: 20px;
+  font-family: bebasBold;
+  border-bottom: 3px solid black;
+}
+.col-12 {
+  margin-top: 5px !important;
+  margin-bottom: 15px;
+}
+
+.subject {
+   background: #eee;
+   border-radius: 13px;
+   overflow:hidden;
+   margin: 0px;
+}
+
+.sub_title {
+   width: 100%;
+   padding: 10px 10px 5px 10px;
+   border-bottom: 4px solid #64c1c6;
+   color: #333;
+   font-size: 24px;
+   font-weight: bold;
+   font-family: bebasRegular;
+}
+
+.sub_uni {
+  padding: 10px;
+  color: #333;
+  height: 60%;
+  font-size: 20px;
+  font-family: bebasLight;
+}
