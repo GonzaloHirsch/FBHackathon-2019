@@ -1,12 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+
+
+import Web3 from 'web3';
+import { WEB3 } from '../app.module';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlockchainqueriesService {
 
-  constructor() {
-    const Web3 = require('web3');
+  constructor(@Inject(WEB3) private web3: Web3) {
+
     const address = "0xD6fbB9Ee231478D1D014CcCB15177BA6600296a5";
     const abiMain = [
       {
@@ -621,89 +626,93 @@ export class BlockchainqueriesService {
         "type": "function"
       }
     ];
-
-    const mainContract = new web3.eth.Contract(abiMain, address)
-    const univeristyContract = new web3.eth.Contract(abiUniContract, mainContract.univeristyContract());
-    const studentContract = new web3.eth.Contract(abiStdContract, mainContract.studentContract());
-    // const universityStorage = new web3.eth.Contract(abiUniContract, mainContract.universityStorage());
-    const studentStorage = new web3.eth.Contract(abiStdStorage, mainContract.studentStorage());
+    console.log(this.web3);
+    console.log(this.web3.eth);
+    const mainContract = new this.web3.eth.contract(abiMain, address)
+ 
+    this.universityContract = new this.web3.eth.contract(abiUniContract, mainContract.univeristyContract);
+    this.studentContract  = new this.web3.eth.contract(abiStdContract, mainContract.studentContract);
+    // const universityStorage = new this.web3.eth.Contract(abiUniContract, mainContract.universityStorage());
+    this.studentStorage = new this.web3.eth.contract(abiStdStorage, mainContract.studentStorage);
    }
-
+   studentContract;
+  studentStorage
+    universityContract;
   //--------------------------------University contract functions------------------------------------------------
 
-  function addCourse(_universityID, _courseName, _capacity, _teacher){
-      universityContract.addCourse(_universityID, _courseName, _capacity, _teacher);
+  addCourse(_universityID, _courseName, _capacity, _teacher){
+      this.universityContract.addCourse(_universityID, _courseName, _capacity, _teacher);
   }
 
-  function getCourseName(_universityID, _courseID){
-      return universityContract.getCourseName(_universityID, _courseID);
+   getCourseName(_universityID, _courseID){
+      return this.universityContract.getCourseName(_universityID, _courseID);
   }
 
-  function addStudentToCourse(_universityID, _courseID, _studentID){
-      universityContract.addStudentToCourse(_universityID, _courseID, _studentID);
+   addStudentToCourse(_universityID, _courseID, _studentID){
+    this.universityContract.addStudentToCourse(_universityID, _courseID, _studentID);
   }
 
-  function markCourseEnd(_universityID, _courseID){
-      universityContract.markCourseEnd(_universityID, _courseID);
+   markCourseEnd(_universityID, _courseID){
+    this.universityContract.markCourseEnd(_universityID, _courseID);
   }
 
-  // function evaluateCourse(_studentID, _courseID, _grade){
+  //  evaluateCourse(_studentID, _courseID, _grade){
   //     universityContract.evaluateCourse(_studentID, _courseID, _grade);
   // }
 
-  function getStudentGrade(_studentID, _courseID){
-      return universityContract.getStudentGrade(_studentID, _courseID);
+   getStudentGrade(_studentID, _courseID){
+      return this.universityContract.getStudentGrade(_studentID, _courseID);
   }
 
-  //--------------------------------Student contract functions------------------------------------------------
+  //--------------------------------Student contract s------------------------------------------------
 
-  function evaluateCourse(_studentID, _courseID, _grade){
-      studentContract.evaluateCourse(_studentID, _courseID, _grade);
+   evaluateCourse(_studentID, _courseID, _grade){
+      this.studentContract.evaluateCourse(_studentID, _courseID, _grade);
   }
 
-  function getActiveCourses(_studentID){
-      return studentContract.getActiveCourses(_studentID);
+   getActiveCourses(_studentID){
+      return this.studentContract.getActiveCourses(_studentID);
   }
 
-  function getNonActiveCourses(_studentID){
-      return studentContract.getNonActiveCourses(_studentID);
+   getNonActiveCourses(_studentID){
+      return this.studentContract.getNonActiveCourses(_studentID);
   }
 
-  //--------------------------------StudentProxy contract functions------------------------------------------------
+  //--------------------------------StudentProxy contract s------------------------------------------------
 
-  function addStudent(_name, _studentID){
-      return studentStorage.addStudent(_name, _studentID);
+   addStudent(_name, _studentID){
+      return this.studentStorage.addStudent(_name, _studentID);
   }
 
-  function getStudentName(_studentID){
-      return studentStorage.getStudentName(_studentID);
+   getStudentName(_studentID){
+      return this.studentStorage.getStudentName(_studentID);
   }
 
-  function addCourse(_studentID, _universityID, _courseID){
-      studentStorage.addCourse(_studentID, _universityID, _courseID);
+   addCourseToStudent(_studentID, _universityID, _courseID){
+      this.studentStorage.addCourse(_studentID, _universityID, _courseID);
   }
 
-  function setCourseActive(_studentID, _courseID, _isActive){
-      studentStorage.setCourseActive(_studentID, _courseID, _isActive);
+   setCourseActive(_studentID, _courseID, _isActive){
+      this.studentStorage.setCourseActive(_studentID, _courseID, _isActive);
   }
 
-  function setCourseGrade(_studentID, _courseID, _grade){
-      studentStorage.setCourseGrade(_studentID, _courseID, _grade);
+   setCourseGrade(_studentID, _courseID, _grade){
+      this.studentStorage.setCourseGrade(_studentID, _courseID, _grade);
   }
 
-  function getCourses(_studentID){
-      return studentStorage.getCourses(_studentID);
+   getCourses(_studentID){
+      return this.studentStorage.getCourses(_studentID);
   }
 
-  function getCourseActive(_studentID, _courseID){
-      return studentStorage.getCourseActive(_studentID, _courseID);
+   getCourseActive(_studentID, _courseID){
+      return this.studentStorage.getCourseActive(_studentID, _courseID);
   }
 
-  function getCourseGrade(_studentID, _courseID){
-      return studentStorage.getCourseGrade(_studentID, _courseID);
+   getCourseGrade(_studentID, _courseID){
+      return this.studentStorage.getCourseGrade(_studentID, _courseID);
   }
 
-  function getCourseUniversity(_studentID, _courseID){
-      return studentStorage.getCourseUniversity(_studentID, _courseID);
+   getCourseUniversity(_studentID, _courseID){
+      return this.studentStorage.getCourseUniversity(_studentID, _courseID);
   }
 }
