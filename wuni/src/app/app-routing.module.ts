@@ -14,10 +14,14 @@ const routes: Routes = [
     loadChildren: './pages/search/search.module#SearchModule'
   },
   {
+    path : 'register',
+    loadChildren: './pages/register/register.module#RegisterModule'
+  },
+  {
     path : 'academicRecords',
     loadChildren: './pages/academic-records/academic-records.module#AcademicRecordsModule'
   }
-  
+
 ];
 
 @NgModule({
