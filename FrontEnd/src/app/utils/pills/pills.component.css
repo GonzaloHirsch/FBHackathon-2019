@@ -1,0 +1,28 @@
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #333;
+    text-align: center;
+  }
+
+  .example-tab-icon {
+    margin-right: 8px;
+  }
+
+
+  .pill{
+
+    color:white;
+  }
+
+  .active-pill{
+
+color:green;
+  }
+
+
+
+  
