@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { CourseDetailComponent } from './pages/search/course-detail/course-detail.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path : 'academicRecords',
     loadChildren: './pages/academic-records/academic-records.module#AcademicRecordsModule'
+  },
+  {
+    path : 'courseDetail',
+    component: CourseDetailComponent
   }
 
 ];
