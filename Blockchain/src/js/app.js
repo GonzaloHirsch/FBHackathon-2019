@@ -2,27 +2,13 @@ App = {
   web3Provider: null,
   contracts: {},
 
+  //-----------------------------------------------------------------------------------------------------------------------
   init: async function() {
-    // Load pets.
-    $.getJSON('../pets.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
-
-      for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
-
-        petsRow.append(petTemplate.html());
-      }
-    });
 
     return await App.initWeb3();
   },
 
+  //-----------------------------------------------------------------------------------------------------------------------
   //Leave this like this, it's for the ethereum plugin on metamask anf other browsers
   initWeb3: async function() {
         // Modern dapp browsers...
@@ -42,83 +28,148 @@ App = {
     }
     // If no injected web3 instance is detected, fall back to Ganache
     else {
-      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
     }
     web3 = new Web3(App.web3Provider);
 
     return App.initContract();
   },
-
+  //-----------------------------------------------------------------------------------------------------------------------
   //HERE WE HAVE TO INITIATE THE CONTRACT
   initContract: function() {
-      $.getJSON('Adoption.json', function(data) {
+      $.getJSON('Main.json', function(data) {
     // Get the necessary contract artifact file and instantiate it with truffle-contract
-    var AdoptionArtifact = data;
-    App.contracts.Adoption = TruffleContract(AdoptionArtifact);
+    var MainArtifact = data;
+    App.contracts.Main = TruffleContract(MainArtifact);
 
     // Set the provider for our contract
-    App.contracts.Adoption.setProvider(App.web3Provider);
+    App.contracts.Main.setProvider(App.web3Provider);
 
     // Use our contract to retrieve and mark the adopted pets
-    return App.markAdopted();
+    //return App.markAdopted();
   });
 
     return App.bindEvents();
   },
-
+//-----------------------------------------------------------------------------------------------------------------------
   //HERE WE BIND ALL THE EVENTS
   bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
+    document.getElementById('btnCreateStudent').addEventListener("click", App.createStudent);
+    document.getElementById('btnAddSubject').addEventListener("click", App.addCourse);
+    document.getElementById('btnAddUniversity').addEventListener("click", App.addUniversity);
+    document.getElementById('btnViewCourse').addEventListener("click", App.getCourse);
+    //$(document).on('click', '.w3-button', App.createStudent);
   },
-
+//-----------------------------------------------------------------------------------------------------------------------
   /*  HERE CREATE ALL THE FUNCTIONS TO BE USED  */
   //I left the example ones to have a reference
+  createStudent: function(){
+    var mainInstance;
+    App.contracts.Main.deployed().then(function(instance){
+      var studentStorage;
+      mainInstance = instance;
+      return mainInstance.studentStorage();
+    }).then(function(studentStorageAddress){
+      $.getJSON('StudentProxy.json', function(data) {
+        // Get the necessary contract artifact file and instantiate it with truffle-contract
+        var StudentProxyArtifact = data;
+        App.contracts.StudentProxy = TruffleContract(StudentProxyArtifact);
 
-  markAdopted: function(adopters, account) {
-        var adoptionInstance;
+        // Set the provider for our contract
+        App.contracts.StudentProxy.setProvider(App.web3Provider);
 
-    App.contracts.Adoption.deployed().then(function(instance) {
-      adoptionInstance = instance;
-
-      return adoptionInstance.getAdopters.call();
-    }).then(function(adopters) {
-      for (i = 0; i < adopters.length; i++) {
-        if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-          $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
-        }
-      }
-    }).catch(function(err) {
-      console.log(err.message);
+        App.contracts.StudentProxy.at(studentStorageAddress).then(function(instance){
+          studentStorage = instance;
+          return studentStorage;
+        }).then(function(ss){
+          return studentStorage.addStudent("Guido", 5);
+        });
+      });
     });
+      return mainInstance;
+    },
+
+  addCourse: function(){
+    var mainInstance;
+    App.contracts.Main.deployed().then(function(instance){
+      var subInstance;
+      mainInstance = instance;
+      return mainInstance.universityContract();
+    }).then(function(address){
+      $.getJSON('UniversityContract.json', function(data) {
+        // Get the necessary contract artifact file and instantiate it with truffle-contract
+        var Artifact = data;
+        App.contracts.UniversityContract = TruffleContract(Artifact);
+
+        // Set the provider for our contract
+        App.contracts.UniversityContract.setProvider(App.web3Provider);
+
+        App.contracts.UniversityContract.at(address).then(function(instance){
+          subInstance = instance;
+          return subInstance;
+        }).then(function(ss){
+          return subInstance.addCourse(2, "NACHO COURSE", 10, "GERO");
+        });
+      });
+    });
+      return mainInstance;
   },
 
-  handleAdopt: function(event) {
-    event.preventDefault();
+  getCourse: function(){
+    var mainInstance;
+    App.contracts.Main.deployed().then(function(instance){
+      var subInstance;
+      mainInstance = instance;
+      return mainInstance.universityContract();
+    }).then(function(address){
+      $.getJSON('UniversityContract.json', function(data) {
+        // Get the necessary contract artifact file and instantiate it with truffle-contract
+        var Artifact = data;
+        App.contracts.UniversityContract = TruffleContract(Artifact);
 
-    var petId = parseInt($(event.target).data('id'));
+        // Set the provider for our contract
+        App.contracts.UniversityContract.setProvider(App.web3Provider);
 
-    var adoptionInstance;
+        App.contracts.UniversityContract.at(address).then(function(instance){
+          subInstance = instance;
+          return subInstance;
+        }).then(function(ss){
+          return subInstance.getCourseName(2, 1);
+        }).then(function(name){
+          document.getElementById('lblTitle').innerHTML = name ;
+          //console.log(name);
+        });
+      });
+    });
+      return mainInstance;
+  },
 
-web3.eth.getAccounts(function(error, accounts) {
-  if (error) {
-    console.log(error);
+  addUniversity: function(){
+    var mainInstance;
+    App.contracts.Main.deployed().then(function(instance){
+      var subInstance;
+      mainInstance = instance;
+      return mainInstance.universityContract();
+    }).then(function(address){
+      $.getJSON('UniversityContract.json', function(data) {
+        // Get the necessary contract artifact file and instantiate it with truffle-contract
+        var Artifact = data;
+        App.contracts.UniversityContract = TruffleContract(Artifact);
+
+        // Set the provider for our contract
+        App.contracts.UniversityContract.setProvider(App.web3Provider);
+
+        App.contracts.UniversityContract.at(address).then(function(instance){
+          subInstance = instance;
+          return subInstance;
+        }).then(function(ss){
+          return subInstance.addUniversity("GONZA UNIVERSITY", 2);
+        });
+      });
+    });
+      return mainInstance;
   }
-
-  var account = accounts[0];
-
-  App.contracts.Adoption.deployed().then(function(instance) {
-    adoptionInstance = instance;
-
-    // Execute adopt as a transaction by sending account
-    return adoptionInstance.adopt(petId, {from: account});
-  }).then(function(result) {
-    return App.markAdopted();
-  }).catch(function(err) {
-    console.log(err.message);
-  });
-});
-  }
-
+  //-----------------------------------------------------------------------------------------------------------------------
 };
 
 
