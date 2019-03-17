@@ -49,7 +49,6 @@ contract UniversityProxy {
         universities[_universityID].courses[newCourse.id] = newCourse;
         universities[_universityID].activeCourses.push(newCourse.id);
         universities[_universityID].numberOfCourses = universities[_universityID].numberOfCourses + 1;
-        totalCourseCount++;
         return true;
     }
 
