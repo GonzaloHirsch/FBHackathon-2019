@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockchainQueriesService } from 'src/app/service/blockchain-queries.service';
 
 
 @Component({
@@ -9,7 +8,7 @@ import { BlockchainQueriesService } from 'src/app/service/blockchain-queries.ser
 })
 export class TestComponent implements OnInit {
 
-  constructor(private gonza:BlockchainQueriesService) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -18,7 +17,7 @@ export class TestComponent implements OnInit {
   andar(){
 
    //alert("MADA");
-   this.gonza.addUniversity1("HOLA UNIVERSITY", 1);
+
 
   }
 }

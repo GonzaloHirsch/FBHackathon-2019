@@ -16,11 +16,7 @@ import {MatIconModule} from '@angular/material';
 import { AcademicRecordsComponent } from './pages/academic-records/academic-records.component';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
-import Web3 from 'web3';
 import { CourseDetailComponent } from './pages/search/course-detail/course-detail.component';
-
-// Create an Injection Token with web3 inside
-export const WEB3 = new InjectionToken<Web3>('web3');
 
 
 
@@ -41,10 +37,7 @@ export const WEB3 = new InjectionToken<Web3>('web3');
     MatIconModule,
     ScrollDispatchModule
   ],
-  providers: [{
-    provide: WEB3,
-    useFactory: () => new Web3(Web3.givenProvider || "ws://localhost:8546"),
-}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

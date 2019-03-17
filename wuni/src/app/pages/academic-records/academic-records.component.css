@@ -48,12 +48,36 @@ src: url(./../../../assets/fonts/BebasNeue-Regular.otf);
     width: 100%;
     padding: 10px 5px 0px 10px;
     margin: 0;
-    border-bottom: 3px solid #64c1c6;
     color: #333;
     font-size: 22px;
     font-weight: bold;
     font-family: bebasRegular;
  }
+
+ .blue {
+   border-bottom: 3px solid #2879b5;
+ }
+
+ .red {
+   border-bottom: 3px solid #64c1c6;
+ }
+
+ .yellow {
+   border-bottom: 3px solid #9ccb8f;
+ }
+
+ .black{
+   border-bottom: 3px solid #00a87a;
+ }
+
+ .green{
+   border-bottom: 3px solid #f8b000;
+ }
+
+ .white{
+   border-bottom: 3px solid #ec6a62;
+ }
+
 
  .sub_uni {
    padding: 5px 10px;
