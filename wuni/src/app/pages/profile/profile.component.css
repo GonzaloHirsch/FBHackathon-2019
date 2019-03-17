@@ -1,8 +1,4 @@
-.profile-pic {
-    background: red;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    margin: auto;
-    /*background-image: url(../../assets)*/ 
+img {   
+    height: 100%;
+    width: 100%;
 }

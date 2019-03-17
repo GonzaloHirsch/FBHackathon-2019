@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockchainqueriesService } from 'src/app/service/blockchainqueries.service';
+
 
 @Component({
   selector: 'test',
@@ -8,7 +8,7 @@ import { BlockchainqueriesService } from 'src/app/service/blockchainqueries.serv
 })
 export class TestComponent implements OnInit {
 
-  constructor(private bl: BlockchainqueriesService) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -20,4 +20,3 @@ export class TestComponent implements OnInit {
 
   }
 }
-
